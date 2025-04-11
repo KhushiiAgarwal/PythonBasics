@@ -1,20 +1,20 @@
 #To rotate a list (or array) n times by k positions, 
-l = [1,2,3,4,5]
-total = 5
-n=3
-k=2
-x = n*k
+# l = [1,2,3,4,5]
+# l = input("Enter list: ").split()
+
 def rotate_list(arr, k):
-    n = len(arr)
-    
-    # If the list is empty or contains one element, no rotation needed
-    if n == 0 or n == 1:
+    l = len(arr)
+    if l == 0 or l == 1:
         return arr
-    
     # Reduce k to avoid unnecessary rotations
-    k = k % n  # In case k > n
-    
-    # Rotate using slicing
+    k = k % l  # In case k > n
     rotated_list = arr[-k:] + arr[:-k]
     
     return rotated_list
+l = list(map(int,input("Enter list:").split()))
+n=int(input(("Enter value of n"))) #number of rotations
+k=int(input(("Enter value of k"))) #positions to rotate per rotation
+x = n*k
+final = rotate_list(l,x)
+
+print(final)
